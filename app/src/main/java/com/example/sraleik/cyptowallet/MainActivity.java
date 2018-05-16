@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView listeCoin = findViewById(R.id.listCoin);
-
-        CoinItem data[] = {new CoinItem("Bitcoin", "/test", "€7536.32", "0.25541", "12.41%▲"), new CoinItem("Ethereum", "eth_logo", "€600.32", "1.55541", "2.45%▲")};
+        CoinItem data[] = {new CoinItem("Bitcoin", "bitcoin", "€7536.32", "0.25541", "12.41%▲"), new CoinItem("Ethereum", "ethereum", "€600.32", "1.55541", "2.45%▲"), new CoinItem("Litecoin", "litecoin", "€100.32", "100.55541", "3.45%▲")};
 
         ListAdapter myAdapter = new CoinListAdapter(this, data);
         listeCoin.setAdapter(myAdapter);
