@@ -64,10 +64,10 @@ public class CoinListAdapter extends BaseAdapter {
         currentValue.setText(data[i].getCurrentValue());
         if(data[i].getTodayChange() < 0){
             todayChange.setText("" + data[i].getTodayChange()+"▼");
-            todayChange.setTextColor(Color.parseColor("#EF455A"));
+            todayChange.setTextColor(ContextCompat.getColor(context, R.color.colorTextRed));
         }else{
             todayChange.setText("" + data[i].getTodayChange()+"▲");
-            todayChange.setTextColor(Color.parseColor("#71B62B"));
+            todayChange.setTextColor(ContextCompat.getColor(context, R.color.colorTextGreen));
         }
 
         return v;
