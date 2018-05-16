@@ -62,6 +62,7 @@ public class CoinListAdapter extends BaseAdapter {
         name.setText(data[i].getName());
         quantity.setText(data[i].getUserQuantity());
         currentValue.setText(data[i].getCurrentValue());
+
         if(data[i].getTodayChange() < 0){
             todayChange.setText("" + data[i].getTodayChange()+"▼");
             todayChange.setTextColor(ContextCompat.getColor(context, R.color.colorTextRed));

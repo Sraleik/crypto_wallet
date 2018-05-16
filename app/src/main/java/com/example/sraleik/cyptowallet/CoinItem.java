@@ -1,6 +1,8 @@
 package com.example.sraleik.cyptowallet;
 
-public class CoinItem {
+import java.io.Serializable;
+
+public class CoinItem implements Serializable {
     private String name;
     private String imgUrl;
     private String currentValue;
