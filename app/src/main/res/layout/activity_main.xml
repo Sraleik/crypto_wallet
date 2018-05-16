@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#46485F"
+    android:background="@drawable/rectangle9"
     tools:context=".MainActivity">
 
 
@@ -86,20 +86,50 @@
 
     </android.support.constraint.ConstraintLayout>
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/lineAddCoin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+
+        <TextView
+            android:id="@+id/textYourCoins"
+            android:layout_width="99dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="Your Coins"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageAdd"
+            android:layout_width="28dp"
+            android:layout_height="27dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/add_logo" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
 
-
-
         <ListView
-            android:id="@+id/listPage"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-        </ListView>
-
+            android:id="@+id/listCoin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
 
     </LinearLayout>
 </LinearLayout>
