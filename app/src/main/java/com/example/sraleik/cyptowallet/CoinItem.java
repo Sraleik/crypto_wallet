@@ -5,9 +5,9 @@ public class CoinItem {
     private String imgUrl;
     private String currentValue;
     private String userQuantity;
-    private String todayChange;
+    private Double todayChange;
 
-    public CoinItem(String name, String imgUrl, String currentValue, String userQuantity, String todayChange) {
+    public CoinItem(String name, String imgUrl, String currentValue, String userQuantity, Double todayChange) {
         this.name = name;
         this.imgUrl = imgUrl;
         this.currentValue = currentValue;
@@ -47,11 +47,11 @@ public class CoinItem {
         this.userQuantity = userQuantity;
     }
 
-    public String getTodayChange() {
+    public Double getTodayChange() {
         return todayChange;
     }
 
-    public void setTodayChange(String todayChange) {
+    public void setTodayChange(Double todayChange) {
         this.todayChange = todayChange;
     }
 }

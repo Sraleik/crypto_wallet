@@ -1,8 +1,10 @@
 package com.example.sraleik.cyptowallet;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,8 +62,15 @@ public class CoinListAdapter extends BaseAdapter {
         name.setText(data[i].getName());
         quantity.setText(data[i].getUserQuantity());
         currentValue.setText(data[i].getCurrentValue());
-        todayChange.setText(data[i].getTodayChange());
+        if(data[i].getTodayChange() < 0){
+            todayChange.setText("" + data[i].getTodayChange()+"▼");
+            todayChange.setTextColor(Color.parseColor("#EF455A"));
+        }else{
+            todayChange.setText("" + data[i].getTodayChange()+"▲");
+            todayChange.setTextColor(Color.parseColor("#71B62B"));
+        }
 
         return v;
     }
 }
+
