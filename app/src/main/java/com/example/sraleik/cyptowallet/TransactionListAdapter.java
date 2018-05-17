@@ -10,11 +10,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CoinListAdapter extends BaseAdapter {
-    private final MainActivity context;
-    private CoinItem data[];
+public class TransactionListAdapter extends BaseAdapter {
+    private final DetailCoin context;
+    private Transaction data[];
 
-    public CoinListAdapter(MainActivity mainActivity, CoinItem data[]) {
+    public TransactionListAdapter(DetailCoin mainActivity, Transaction data[]) {
         context  = mainActivity;
         this.data = data;
     }
@@ -44,20 +44,31 @@ public class CoinListAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v;
         if (convertView == null) {
-            v = inflater.inflate(R.layout.item_coin_list, null);
+            v = inflater.inflate(R.layout.item_transaction_list, null);
         } else {
             v = convertView;
         }
 
-        ImageView img = v.findViewById(R.id.imageCoin);
-        TextView name = v.findViewById(R.id.textCoinName);
-        TextView quantity = v.findViewById(R.id.textCoinQuantity);
-        TextView currentValue = v.findViewById(R.id.textCoinUserValue);
-        TextView todayChange = v.findViewById(R.id.text24hChange);
+        ImageView img = v.findViewById(R.id.imageTransaction);
+        TextView type = v.findViewById(R.id.textTypeTransaction);
+        TextView date = v.findViewById(R.id.textTransactionDate);
+        TextView quantity = v.findViewById(R.id.textCoinQuantity2);
+        TextView fiatValue = v.findViewById(R.id.textTransactionFiatValue);
 
+        if(data[i].getType().equals("sell")) {
+            img.setImageDrawable(getDrawable("oval10"));
+            quantity.setTextColor(ContextCompat.getColor(context, R.color.colorTextRed));
+        }else{
+            img.setImageDrawable(getDrawable("oval10copy"));
+            quantity.setTextColor(ContextCompat.getColor(context, R.color.colorTextGreen));
+        }
 
-        img.setImageDrawable(getDrawable(data[i].getImgUrl()));
-        name.setText(data[i].getName());
+        type.setText(data[i].getType());
+        date.setText(data[i].getDate().toString());
+        quantity.setText(data[i].getQuantity() + data[i].getCoinCurrency());
+        fiatValue.setText("€" + data[i].getFiatValue());
+
+        /*name.setText(data[i].getName());
         quantity.setText(data[i].getUserQuantity());
         currentValue.setText(data[i].getCurrentValue());
 
@@ -67,7 +78,7 @@ public class CoinListAdapter extends BaseAdapter {
         }else{
             todayChange.setText("" + data[i].getTodayChange()+"▲");
             todayChange.setTextColor(ContextCompat.getColor(context, R.color.colorTextGreen));
-        }
+        }*/
 
         return v;
     }

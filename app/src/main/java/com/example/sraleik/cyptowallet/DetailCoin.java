@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.Date;
 
 public class DetailCoin extends AppCompatActivity {
 
@@ -41,6 +45,18 @@ public class DetailCoin extends AppCompatActivity {
         coinName.setText(coinInfo.getName());
         coinCurrentValue.setText(coinInfo.getCurrentValue());
         coinQuantity.setText(coinInfo.getUserQuantity());
+
+
+        final Transaction transaction[] = {new Transaction("buy", new Date(), "BTC",0.0045, 1325.045, "€" ),
+                                            new Transaction("sell", new Date(), "BTC",0.0145, 4525.072, "€" ) };
+
+        ListView listeTransaction = findViewById(R.id.listTransaction);
+
+        ListAdapter myAdapter = new TransactionListAdapter(this, transaction);
+        listeTransaction.setAdapter(myAdapter);
+
+
+
 
     }
 }

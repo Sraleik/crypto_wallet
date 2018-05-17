@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageTransaction"
+        android:layout_width="15dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/oval10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTransactionDate"
+        android:layout_width="118dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:text="12 Octobre 2017"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toEndOf="@+id/imageTransaction"
+        app:layout_constraintTop_toBottomOf="@+id/textTypeTransaction" />
+
+    <TextView
+        android:id="@+id/textTypeTransaction"
+        android:layout_width="119dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+
+        android:text="buy"
+        android:textColor="@color/colorText"
+        app:layout_constraintStart_toEndOf="@+id/imageTransaction"
+        app:layout_constraintTop_toTopOf="@+id/imageTransaction" />
+
+    <TextView
+        android:id="@+id/textTransactionFiatValue"
+        android:layout_width="76dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="2dp"
+        android:text="€7533.12"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCoinQuantity2" />
+
+    <TextView
+        android:id="@+id/textCoinQuantity2"
+        android:layout_width="94dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="16dp"
+        android:text="0.00254BTC"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/holo_green_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textTypeTransaction" />
+
+</android.support.constraint.ConstraintLayout>
