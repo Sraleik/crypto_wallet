@@ -47,8 +47,11 @@ public class DetailCoin extends AppCompatActivity {
         coinQuantity.setText(coinInfo.getUserQuantity());
 
 
-        final Transaction transaction[] = {new Transaction("buy", new Date(), "BTC",0.0045, 1325.045, "€" ),
-                                            new Transaction("sell", new Date(), "BTC",0.0145, 4525.072, "€" ) };
+        final Transaction transaction[] = {new Transaction("buy", new Date(), "BTC",0.0049, 1325.045, "€" ),
+                                            new Transaction("buy", new Date(), "BTC",0.0043, 322.045, "€" ),
+                                            new Transaction("sell", new Date(), "BTC",0.01057, 11125.045, "€" ),
+                                            new Transaction("buy", new Date(), "BTC",0.0843, 8327.015, "€" ),
+                                            new Transaction("sell", new Date(), "BTC",1.1145, 14529.072, "€" ) };
 
         ListView listeTransaction = findViewById(R.id.listTransaction);
 
